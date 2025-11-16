@@ -1,13 +1,14 @@
-package edu.MD.Student_managenent_system.repository;
+package edu.MD.Student_managenent_system.repository.impl;
 
 import edu.MD.Student_managenent_system.dbConnection.DBConnection;
 import edu.MD.Student_managenent_system.model.StudentModel;
+import edu.MD.Student_managenent_system.repository.StudentUpdateRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class StudentUpdateRepositoryImpl implements StudentUpdateRepository{
+public class StudentUpdateRepositoryImpl implements StudentUpdateRepository {
     Connection connection;
 
     {

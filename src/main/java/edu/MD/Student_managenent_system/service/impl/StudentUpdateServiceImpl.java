@@ -1,8 +1,9 @@
-package edu.MD.Student_managenent_system.service;
+package edu.MD.Student_managenent_system.service.impl;
 
 import edu.MD.Student_managenent_system.model.StudentModel;
 import edu.MD.Student_managenent_system.repository.StudentUpdateRepository;
-import edu.MD.Student_managenent_system.repository.StudentUpdateRepositoryImpl;
+import edu.MD.Student_managenent_system.repository.impl.StudentUpdateRepositoryImpl;
+import edu.MD.Student_managenent_system.service.StudentUpdateService;
 
 import java.sql.SQLException;
 

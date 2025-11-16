@@ -1,13 +1,12 @@
-package edu.MD.Student_managenent_system.repository;
+package edu.MD.Student_managenent_system.repository.impl;
 
 import edu.MD.Student_managenent_system.dbConnection.DBConnection;
 import edu.MD.Student_managenent_system.model.StudentModel;
+import edu.MD.Student_managenent_system.repository.RegisterStudentRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import java.util.Date;
 
 public class RegisterStudentRepositoryImpl implements RegisterStudentRepository {
     Connection connection;
