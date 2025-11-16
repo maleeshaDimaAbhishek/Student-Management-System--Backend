@@ -14,7 +14,7 @@ import java.sql.Date;
 @ToString
 public class StudentModel {
 
-    private Long nic;
+    private String nic;
     private String name;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")

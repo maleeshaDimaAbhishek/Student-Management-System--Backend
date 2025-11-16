@@ -1,15 +1,19 @@
 package edu.MD.Student_managenent_system.controller;
 
 import edu.MD.Student_managenent_system.model.StudentModel;
+import edu.MD.Student_managenent_system.service.GetAllStudentService;
 import edu.MD.Student_managenent_system.service.RegisterStudentService;
 import edu.MD.Student_managenent_system.service.StudentDeleteService;
 import edu.MD.Student_managenent_system.service.StudentUpdateService;
+import edu.MD.Student_managenent_system.service.impl.GetAllStudentServiceImpl;
 import edu.MD.Student_managenent_system.service.impl.RegisterStudentServiceImpl;
 import edu.MD.Student_managenent_system.service.impl.StudentDeleteServiceImpl;
 import edu.MD.Student_managenent_system.service.impl.StudentUpdateServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/student")
@@ -17,6 +21,7 @@ public class StudentController {
     StudentDeleteService studentDeleteService=new StudentDeleteServiceImpl();
     RegisterStudentService registerStudentService=new RegisterStudentServiceImpl();
     StudentUpdateService studentUpdateService=new StudentUpdateServiceImpl();
+    GetAllStudentService getAllStudentService=new GetAllStudentServiceImpl();
     @PostMapping("/add")
     public void RegisterStudent(@RequestBody StudentModel studentModel){
         System.out.print(studentModel);
@@ -50,7 +55,12 @@ public class StudentController {
         }
     }
     @GetMapping("/getAll")
-    public void getAllStudent(){
-        boolean b=stu
+    public List<StudentModel> getAllStudent(){
+        List<StudentModel> studentModelList=new ArrayList<>();
+        try {
+            return getAllStudentService.getAllStudent();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
